@@ -285,8 +285,12 @@ extern "C" {
 
 		int numChunks = (length / 4) + 1;
 
-		if (bitbuffer->length < numChunks)
-			bitbuffer->chunks = realloc(bitbuffer->chunks, numChunks * sizeof(uint32_t));
+		if (bitbuffer->length < numChunks) {
+			int newLength = numChunks * sizeof(uint32_t);
+
+			bitbuffer->chunks = realloc(bitbuffer->chunks, newLength);
+			bitbuffer->length = newLength;
+		}
 
 		for (int i = 0; i < numChunks; i++) {
 			int dataIdx = i * 4;
