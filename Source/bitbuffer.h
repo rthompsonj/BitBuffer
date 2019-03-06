@@ -162,6 +162,8 @@ extern "C" {
 		if (bitbuffer == NULL)
 			return BITBUFFER_ERROR;
 
+		bitbuffer_clear(bitbuffer);
+
 		free(bitbuffer->chunks);
 
 		bitbuffer->chunks = NULL;
