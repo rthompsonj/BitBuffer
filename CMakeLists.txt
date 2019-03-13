@@ -7,6 +7,10 @@ set(BITBUFFER_TEST "0" CACHE BOOL "Create a test executable")
 
 include_directories(${PROJECT_SOURCE_DIR}/Source)
 
+if (CMAKE_C_COMPILER_ID MATCHES GNU OR CMAKE_C_COMPILER_ID MATCHES Clang)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
+endif()
+
 if (BITBUFFER_STATIC)
     add_library(bitbuffer_static STATIC Source/bitbuffer.c)
     target_link_libraries(bitbuffer_static)
