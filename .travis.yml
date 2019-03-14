@@ -1,0 +1,11 @@
+os:
+  - linux
+  - osx
+
+language: c
+
+compiler: clang
+
+script:
+  - cmake . -DCMAKE_BUILD_TYPE=Release
+  - cmake --build .
