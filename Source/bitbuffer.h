@@ -131,7 +131,7 @@ extern "C" {
 #endif
 
 #if defined(BITBUFFER_IMPLEMENTATION) && !defined(BITBUFFER_IMPLEMENTATION_DONE)
-#define BITBUFFER_IMPLEMENTATION_DONE
+#define BITBUFFER_IMPLEMENTATION_DONE 1
 #ifdef __cplusplus
 extern "C" {
 #endif
